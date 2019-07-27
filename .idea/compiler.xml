@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="pojo" />
+        <module name="commons" />
         <module name="dao" />
         <module name="web" />
-        <module name="commons" />
         <module name="service" />
-        <module name="pojo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,7 +22,7 @@
       <module name="scw_manmagement" target="1.5" />
       <module name="scwparent" target="1.5" />
       <module name="service" target="1.5" />
-      <module name="web" target="1.7" />
+      <module name="web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
