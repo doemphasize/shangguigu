@@ -106,8 +106,8 @@ h3.break>a {
 				</div>
             <div id="navbar" class="navbar-collapse collapse" style="float:right;">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="${ctp}/login.html">登录</a></li>
-                <li><a href="${ctp}/reg.html">注册</a></li>
+                <li><a href="${ctp}/login.jsp">登录</a></li>
+                <li><a href="${ctp}/reg.jsp">注册</a></li>
               </ul>
             </div>
 			  </div>
