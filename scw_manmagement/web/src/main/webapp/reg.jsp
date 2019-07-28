@@ -8,7 +8,7 @@
     <meta name="keys" content="">
     <meta name="author" content="">
 <%@include file="WEB-INF/includes/cssfile.jsp"%>
-	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="${ctp}/css/login.css">
 	<style>
 
 	</style>
@@ -27,15 +27,15 @@
       <form id="regForm" class="form-signin" role="form" action="${ctp}/user/reg" method="post">
         <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户注册</h2>
 		  <div class="form-group has-success has-feedback">
-			<input type="text" class="form-control" id="inputSuccess4" placeholder="请输入登录账号" autofocus>
+			<input name="username" type="text" class="form-control" id="inputSuccess4" placeholder="请输入登录账号" value="${TUser.username}" autofocus>
 			<span class="glyphicon glyphicon-user form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-success has-feedback">
-			<input type="text" class="form-control" id="inputSuccess4" placeholder="请输入登录密码" style="margin-top:10px;">
+			<input name="userpswd" type="text" class="form-control" id="inputSuccess4" placeholder="请输入登录密码" style="margin-top:10px;">
 			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-success has-feedback">
-			<input type="text" class="form-control" id="inputSuccess4" placeholder="请输入邮箱地址" style="margin-top:10px;">
+			<input name="email" type="text" class="form-control" id="inputSuccess4" placeholder="请输入邮箱地址" style="margin-top:10px;">
 			<span class="glyphicon glyphicon glyphicon-envelope form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-success has-feedback">
