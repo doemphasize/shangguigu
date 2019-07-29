@@ -7,8 +7,8 @@
     <meta name="description" content="">
     <meta name="keys" content="">
     <meta name="author" content="">
- <%@include file="WEB-INF/includes/cssfile.jsp"%>
-      <link rel="stylesheet" href="css/login.css">
+<%@ include file="WEB-INF/includes/cssfile.jsp"%>
+	<link rel="stylesheet" href="${ctp}/css/login.css">
 	<style>
 
 	</style>
@@ -24,20 +24,20 @@
 
     <div class="container">
 
-      <form id="loginForm" class="form-signin" role="form" action="/guanli" method="post">
+      <form id="form1" class="form-signin" role="form" action="${ctp}/first" method="post">
         <h2 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> 用户登录</h2>
 		  <div class="form-group has-success has-feedback">
-			<input name="username" type="text" class="form-control" id="inputSuccess4" placeholder="请输入登录账号" autofocus>
+			<input name="username" type="text" class="form-control" id="username_input" placeholder="请输入登录账号" autofocus>
 			<span class="glyphicon glyphicon-user form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-success has-feedback">
-			<input name="userpswd" type="text" class="form-control" id="inputSuccess4" placeholder="请输入登录密码" style="margin-top:10px;">
+			<input name="userpswd" type="text" class="form-control" id="userpswd_input" placeholder="请输入登录密码" style="margin-top:10px;">
 			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-success has-feedback">
-			<select id="select" class="form-control" >
+			<select class="form-control" >
                 <option value="member">会员</option>
-                <option value="user">管理</option>
+                <option value="manage">管理</option>
             </select>
 		  </div>
         <div class="checkbox">
@@ -49,23 +49,24 @@
             忘记密码
           </label>
           <label style="float:right">
-            <a href="reg.jsp">我要注册</a>
+            <a href="reg.html">我要注册</a>
           </label>
         </div>
-        <a id="submitbtn" class="btn btn-lg btn-success btn-block" > 登录</a>
+        <a  class="btn btn-lg btn-success btn-block" onclick="dologin()"  > 登录</a>
       </form>
     </div>
-<%@include file="WEB-INF/includes/jsfile.jsp"%>
+  <%@include file="WEB-INF/includes/jsfile.jsp"%>
     <script type="text/javascript">
-     $("#submitbtn").click(function () {
+        function dologin() {
+
+
+                //管理员登陆
+                $("form:first").submit();
 
 
 
-             $("#loginForm").submit();
-
-
-     })
-
+            return false;
+        }
     </script>
   </body>
 </html>

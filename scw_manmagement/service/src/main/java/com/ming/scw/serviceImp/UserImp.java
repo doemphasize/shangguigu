@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class UserImp implements UserSerivce {
@@ -36,6 +37,12 @@ public class UserImp implements UserSerivce {
             return true;
         }else
             return false;
+    }
+
+    public TUser login(TUser user) {
+        String username = user.getUsername();
+        TUser tUser = userMapper.selectbyExample(user);
+        return tUser;
     }
 
 }
