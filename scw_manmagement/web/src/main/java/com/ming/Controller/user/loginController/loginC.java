@@ -23,4 +23,8 @@ public class loginC {
         System.out.println(login);
         return "redirect:/main.html";
     }
+    @RequestMapping("/permission/user")
+    public String usermanage(){
+        return "manange/user";
+    }
 }
