@@ -21,6 +21,6 @@ public class loginC {
         TUser login = userSerivce.login(user);
         session.setAttribute("username",login.getUsername());
         System.out.println(login);
-        return "main";
+        return "redirect:/main.html";
     }
 }
