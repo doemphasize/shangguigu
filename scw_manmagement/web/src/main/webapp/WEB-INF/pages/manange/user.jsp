@@ -65,7 +65,7 @@
                       <td>${user.username}</td>
                       <td>${user.email}</td>
                       <td>
-                          <button type="button" class="btn btn-success btn-xs"><i class=" glyphicon glyphicon-check"></i></button>
+                          <button uid=${user.id} type="button" class="btn btn-success btn-xs assignbton" ><i class=" glyphicon glyphicon-check"></i></button>
                           <button type="button" class="btn btn-primary btn-xs"><i class=" glyphicon glyphicon-pencil"></i></button>
                           <button type="button" class="btn btn-danger btn-xs"><i class=" glyphicon glyphicon-remove"></i></button>
                       </td>
@@ -125,12 +125,14 @@
 					}
 				});
             });
-            $("tbody .btn-success").click(function(){
-                window.location.href = "assignRole.html";
-            });
-            $("tbody .btn-primary").click(function(){
-                window.location.href = "edit.html";
-            });
+
+
+            
+            $(".assignbton").click(function () {
+                    var userid=$(this).attr("uid");
+                    var url="${ctp}/power?userid="+userid;
+                    location.href=url;
+            })
         </script>
   </body>
 </html>

@@ -1,6 +1,7 @@
 package com.ming.Controller.user.loginController;
 
 import Utils.Md5Utils;
+import bean.TRole;
 import bean.TUser;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -35,10 +36,18 @@ public class loginC {
         List<TUser> getall = userSerivce.getall();
 //分页。连续显示5页
         PageInfo<TUser> Info = new PageInfo(getall, 5);
-        System.out.println(Info);
+
         model.addAttribute("user_info",Info);
 
 
         return "manange/user";
+    }
+    @RequestMapping("/power")
+    public String power(@RequestParam("userid") Integer id,Model model){
+        List roles = userSerivce.roles();
+        List<TRole> userroles = userSerivce.userroles(id);
+        model.addAttribute("userroles",userroles);
+        model.addAttribute("roles",roles);
+        return "assignRole";
     }
 }
