@@ -11,4 +11,5 @@ public interface UserSerivce {
     public  Boolean register(TUser user);
 
     public TUser login(TUser user);
+    public List<TUser> getall();
 }

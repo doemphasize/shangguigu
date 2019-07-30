@@ -45,4 +45,9 @@ public class UserImp implements UserSerivce {
         return tUser;
     }
 
+    public List getall() {
+        List<TUser> alluser = userMapper.selectAll();
+        return alluser;
+    }
+
 }

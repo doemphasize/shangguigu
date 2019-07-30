@@ -25,7 +25,7 @@
                     <ul style="margin-top:10px;display:none;">
                         <c:forEach items="${p_menu.childs}" var="c_menu">
                         <li style="height:30px;">
-                            <a href="${c_menu.url}"><i class="${c_menu.icon}"></i> ${c_menu.name}</a>
+                            <a href="${ctp}/${c_menu.url}"><i class="${c_menu.icon}"></i> ${c_menu.name}</a>
                         </li>
 
                         </c:forEach>
