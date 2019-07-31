@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class loginC {
@@ -44,10 +46,23 @@ public class loginC {
     }
     @RequestMapping("/power")
     public String power(@RequestParam("userid") Integer id,Model model){
-        List roles = userSerivce.roles();
+        List<TRole> roles = userSerivce.roles();
+        HashMap<Integer, TRole> m1 = new HashMap<>();
+        HashMap<Integer, TRole> m2 = new HashMap<>();
         List<TRole> userroles = userSerivce.userroles(id);
-        model.addAttribute("userroles",userroles);
-        model.addAttribute("roles",roles);
+        for (TRole a: userroles
+             ) {
+            m1.put(a.getId(),a);
+        }
+        for (TRole b:roles
+             ) {
+            if(!m1.containsKey(b.getId())){
+                m2.put(b.getId(),b);
+            }
+        }
+
+        model.addAttribute("userroles",m1);
+        model.addAttribute("roles",m2);
         return "assignRole";
     }
 }

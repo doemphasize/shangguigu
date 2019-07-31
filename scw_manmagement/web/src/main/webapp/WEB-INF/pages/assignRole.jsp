@@ -38,11 +38,9 @@
 				  <div class="form-group">
 					<label for="exampleInputPassword1">未分配角色列表</label><br>
 					<select class="form-control" multiple size="10" style="width:100px;overflow-y:auto;">
-                        <option value="pm">PM</option>
-                        <option value="sa">SA</option>
-                        <option value="se">SE</option>
-                        <option value="tl">TL</option>
-                        <option value="gl">GL</option>
+						<c:forEach items="${roles}" var="no">
+                        <option value="pm">${no.value.name}</option>
+						</c:forEach>
                     </select>
 				  </div>
 				  <div class="form-group">
@@ -55,9 +53,9 @@
 				  <div class="form-group" style="margin-left:40px;">
 					<label for="exampleInputPassword1">已分配角色列表</label><br>
 					<select class="form-control" multiple size="10" style="width:100px;overflow-y:auto;">
-                        <option value="qa">QA</option>
-                        <option value="qc">QC</option>
-                        <option value="pg">PG</option>
+						<c:forEach items="${userroles}" var="no1">
+							<option value="pm">${no1.value.name}</option>
+						</c:forEach>
                     </select>
 				  </div>
 				</form>

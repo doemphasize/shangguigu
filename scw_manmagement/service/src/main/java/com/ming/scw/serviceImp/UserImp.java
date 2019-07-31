@@ -58,7 +58,7 @@ public class UserImp implements UserSerivce {
 
 
     public List userroles(Integer id) {
-        List<TRole> userroles = roleMapper.allroles(id);
+        List<TRole> userroles = roleMapper.userroles(id);
         return userroles;
     }
 
