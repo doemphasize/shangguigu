@@ -15,4 +15,5 @@ public interface UserSerivce {
     public List<TUser> getall();
     public List roles();
     public List<TRole> userroles(Integer id);
+
 }
